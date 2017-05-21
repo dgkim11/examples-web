@@ -1,0 +1,25 @@
+<div class="col-sm-offset-1 col-sm-10">
+    <p>User List</p>
+    <div>
+        <table id="dataTable">
+            <thead>
+            <tr>
+                <th>User Id</th>
+                <th>First name</th>
+                <th>Family Name</th>
+                <th>Email</th>
+            </tr>
+            <thead>
+            <tbody>
+            {{#users}}
+                <tr>
+                    <td>{{id}}</td>
+                    <td>{{firstName}}</td>
+                    <td>{{familyName}}</td>
+                    <td>{{email}}</td>
+                <tr>
+            {{/users}}
+            </tbody>
+        </table>
+    </div>
+</div>

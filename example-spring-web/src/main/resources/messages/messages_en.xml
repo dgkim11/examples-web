@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <entry key="userView.title">The following is the list of users</entry>
+    <entry key="userView.id">ID</entry>
+    <entry key="userView.firstName">First Name</entry>
+    <entry key="userView.familyName">Family Name</entry>
+    <entry key="userView.email">Email</entry>
+    <entry key="userView.bottom">Please contact help@email.com if you have any question.</entry>
+</properties>
