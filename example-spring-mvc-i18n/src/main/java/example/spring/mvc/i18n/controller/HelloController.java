@@ -1,6 +1,5 @@
 package example.spring.mvc.i18n.controller;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,19 +20,6 @@ public class HelloController {
 
     @Resource
     CookieLocaleResolver localeResolver;
-
-    @Value("${welcome.message}")
-    private String helloMessage;
-
-    /**
-    * Request mapping for user
-    */
-    @RequestMapping(value = "/hello/{name}", method = RequestMethod.GET)
-    public ModelAndView helloPage(@PathVariable String name) {
-        ModelAndView mv= new ModelAndView("hello");
-        mv.addObject("name", name);
-        return mv;
-    }
 
     @RequestMapping(value = "/api/en/hello/{name}", method = RequestMethod.GET)
     @ResponseBody
@@ -66,9 +52,15 @@ public class HelloController {
         return "Current locale is " + localeResolver.resolveLocale(httpServletRequest);
     }
 
+    /**
+     * forward to 'hello' view page.
+     *
+     * @param name
+     * @return
+     */
     @RequestMapping(value = "/hello/{name}")
     @ResponseBody
-    public ModelAndView getLocale(@PathVariable String name) {
+    public ModelAndView helloView(@PathVariable String name) {
         ModelAndView mv = new ModelAndView("hello");
         mv.addObject("name", name);
 
