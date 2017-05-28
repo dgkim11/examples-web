@@ -21,7 +21,7 @@ public class UserController {
     * Request mapping for user
     */
     @RequestMapping(value = "users", method = RequestMethod.GET)
-    public ModelAndView getUsersView() {
+    public ModelAndView getUsers() {
         ModelAndView mv= new ModelAndView("usersView");
         mv.addObject("users", userService.findAll());
         return mv;
@@ -31,8 +31,8 @@ public class UserController {
     * Rest web service
     */
     @RequestMapping(value = "/usersList", method = RequestMethod.GET)
-    public @ResponseBody
-    List<User> getUsersRest() {
+    @ResponseBody
+    public List<User> getUsersRest() {
         return userService.findAll();
     }
 }
